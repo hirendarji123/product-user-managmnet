@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "dd5c0d38-5d28-4332-8aaa-a46f797f9aee",
+		"name": "Demo-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26704015"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User by Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ZjhmNjMyNjdkODI2MWUyZWVkOTBiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMTczMzEyMiwiZXhwIjoxNzIyMDkzMTIyfQ.Znh8UYnuX86Ko_GI_y3DdAo63mL7Fq9PQsyZdxHtmb4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"hiren\",\n    \"email\": \"user5@gmail.com\",\n    \"password\": \"Test@123\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ZjhmNjMyNjdkODI2MWUyZWVkOTBiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMTgwMDcwMSwiZXhwIjoxNzIyMTYwNzAxfQ.FbqVKHe6mHi0nheTFkBWz2Z8u8jC5vM9kpuXabMxByM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Blender\",\n    \"sku\": \"BL1234\",\n    \"description\": \"A high-precision wireless mouse with ergonomic design.\",\n    \"category\": \"Electronics\",\n    \"logo\": \"https://example.com/logos/wireless-mouse.png\",\n    \"source\": \"user\",\n    \"users\": [\n        \"669f8fda44cec297f305f43c\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ZjhmNjMyNjdkODI2MWUyZWVkOTBiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMTczMzkwMywiZXhwIjoxNzIyMDkzOTAzfQ.xKudPTxB9oeJluTIvPibOvUYd_blVEHkJFVR40BzhDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Wired Mouse\",\n    \"sku\": \"WM123\",\n    \"description\": \"A high-precision wireless mouse with ergonomic design.\",\n    \"category\": \"Electronics\",\n    \"logo\": \"https://example.com/logos/wireless-mouse.png\",\n    \"source\": \"user\",\n    \"users\": [\n        \"669f8fda44cec297f305f43c\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/669f919dc2108c2374baa3f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"669f919dc2108c2374baa3f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ZjhmNjMyNjdkODI2MWUyZWVkOTBiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMTgwMDcwMSwiZXhwIjoxNzIyMTYwNzAxfQ.FbqVKHe6mHi0nheTFkBWz2Z8u8jC5vM9kpuXabMxByM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test\",\n    \"sku\": 2,\n    \"description\": \"demo-test\",\n    \"category\": \"IT\",\n    \"source\": \"admin\",\n    \"users\": [\n        \"669f83a1d07050132c5a50fd\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products?page=1&pageSize=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "2"
+						},
+						{
+							"key": "search",
+							"value": "Test",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "IT",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ZjhmNjMyNjdkODI2MWUyZWVkOTBiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMTczMzkwMywiZXhwIjoxNzIyMDkzOTAzfQ.xKudPTxB9oeJluTIvPibOvUYd_blVEHkJFVR40BzhDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test\",\n    \"sku\": 2,\n    \"description\": \"demo-test\",\n    \"category\": \"IT\",\n    \"source\": \"admin\",\n    \"users\": [\n        \"669f83a1d07050132c5a50fd\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/getAlluser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"getAlluser"
+					],
+					"query": [
+						{
+							"key": "allDetails",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ZjhmNjMyNjdkODI2MWUyZWVkOTBiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMTczMzkwMywiZXhwIjoxNzIyMDkzOTAzfQ.xKudPTxB9oeJluTIvPibOvUYd_blVEHkJFVR40BzhDE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test\",\n    \"sku\": 2,\n    \"description\": \"demo-test\",\n    \"category\": \"IT\",\n    \"source\": \"admin\",\n    \"users\": [\n        \"669f83a1d07050132c5a50fd\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/669f987d52f1baeeacdc3bf7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"669f987d52f1baeeacdc3bf7"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
